@@ -12,13 +12,12 @@ cff-version: "1.2.0"
 type: software
 
 title: Web Mining and Applied NLP 01 Getting Started
-date-released: "2026-10-14"
+date-released: "2026-10-20"
 
 authors:
-  - family-names: Case
-    given-names: Denise M.
-    orcid: "https://orcid.org/0000-0001-6165-7389"
-    affiliation: "Northwest Missouri State University, USA"
+  - family-names: Hennelly
+    given-names: Kevin J.
+    affiliation: "student,Northwest Missouri State University, USA"
 
 repository-code: "https://github.com/KHenn22/nlp-01-getting-started"
 url: "https://github.com/KHenn22/nlp-01-getting-started"

@@ -1,5 +1,7 @@
 """web_words.py - Project script (example).
 
+Author: Kevin Hennelly (KHenn22), October 2026
+
 Purpose
 
   Retrieve a web page, extract its text, count word frequencies,
@@ -62,7 +64,8 @@ log_path(LOG, "SCRIPTS_PATH", SCRIPTS_PATH)
 # The Shakespeare page is simple and stable.
 # The Wikipedia page is interesting, but requires a User-Agent header.
 # url: str = "https://shakespeare.mit.edu/romeo_juliet/full.html"
-url: str = "https://en.wikipedia.org/wiki/Natural_language_processing"
+# url: str = "https://en.wikipedia.org/wiki/Natural_language_processing"
+url: str = "https://en.wikipedia.org/wiki/Air_traffic_control"
 
 # Some sites reject requests that look like anonymous scripts.
 # This header helps the request look more like a normal browser visit.
