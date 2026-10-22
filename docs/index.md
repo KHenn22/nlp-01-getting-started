@@ -57,6 +57,14 @@ provide an initial view of a document's vocabulary.
 These techniques establish a foundation
 for later work involving text preprocessing,
 corpus exploration, and natural language processing.
+S
+## Custom Modifications
+**What changed:** In `src/nlp/web_words.py`, the `url` now points to the Wikipedia article on [Air traffic control](https://en.wikipedia.org/wiki/Air_traffic_control) instead of Natural language processing.
+**Why:** To test whether word frequency analysis captures the topic of a different article.
+**Prediction:** If I change the page to Air traffic control, I expect aviation words like "aircraft," "traffic," "control," and "airspace" to replace "language" and "processing" at the top, because word frequencies reflect the article's topic. Filler words like "that," "with," and "from" should stay. "air" won't appear, because the filter drops words of 3 letters or fewer.
+**Result:** The top words became control (117), traffic (96), airport (51), aircraft (50), aviation (46), and flight (42). "airspace" did not make the top 10, but "airport," "tower," and "civil" did. "from" (40) stayed in the top 10, and Wikipedia noise like "retrieved" (33) remained.
+**Surprise:** "air" and "atc" still appear in the word cloud. The script checks each word's length before stripping punctuation, so "air," and "(ATC)" pass the filter and are then stripped. Plain "air" is dropped, so it is heavily undercounted.
+**What I learned:** Changing the input changes the vocabulary, but the cleaning rules carry over, so filler words and Wikipedia markup show up on any page. Stripping punctuation before filtering and removing common filler words would improve the results.
 
 ## Documentation Index
 
