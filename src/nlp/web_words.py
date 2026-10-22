@@ -143,11 +143,38 @@ print(f"Total raw words: {count_of_words:,}")
 # that creates a new lowercase list from a list of words.
 words = [word.lower() for word in words]
 
-# Strip out (remove) common punctuation from the beginning and end of words.
-# Keep only tokens longer than 3 characters to reduce noise.
-# Again, a list comprehension is great for simple list-to-list transformations.
+# Strip punctuation first, then filter, so length is measured on the word itself.
+stripped_words: list[str] = [word.strip(".,:;!?()[]\"'") for word in words]
+# Filler words and Wikipedia page text that are not about the topic.
+STOP_WORDS: set[str] = {
+    "that",
+    "with",
+    "from",
+    "this",
+    "which",
+    "have",
+    "also",
+    "their",
+    "there",
+    "were",
+    "been",
+    "such",
+    "these",
+    "other",
+    "some",
+    "about",
+    "retrieved",
+    "archived",
+    "original",
+    "edit",
+    "wikipedia",
+}
+# Short aviation terms worth keeping even though they are 3 letters.
+KEEP_SHORT: set[str] = {"air", "atc", "faa"}
 clean_words: list[str] = [
-    word.strip(".,:;!?()[]\"'") for word in words if len(word) > 3
+    word
+    for word in stripped_words
+    if word not in STOP_WORDS and (len(word) > 3 or word in KEEP_SHORT)
 ]
 count_of_clean_words: int = len(clean_words)
 
