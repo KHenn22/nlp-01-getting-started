@@ -269,7 +269,7 @@ plt.figure(figsize=(12, 6))
 plt.imshow(wc)
 plt.axis("off")
 plt.title(label="Word Cloud of Air Traffic Control Wikipedia Page")
-plt.savefig(IMAGES_PATH / "top_words.png", bbox_inches="tight")
+plt.savefig(IMAGES_PATH / "word_cloud.png", bbox_inches="tight")
 plt.show()
 
 # ============================================================
