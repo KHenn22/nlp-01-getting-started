@@ -79,7 +79,7 @@ After cleaning, 4,207 words remained. The top words were control (117), air (116
 ![Most frequent words](images/top_words.png)
 ![Word cloud](images/word_cloud.png)
 ### Observations
-- "air" rose from a handful of counts to 116 once punctuation was stripped first, nearly tying "control."
+- "air" rose from a handful of counts to 116 once punctuation was stripped first and "air" was exempted from the scrub list, nearly tying "control."
 - "atc" (37) entered the top 10.
 - Month names and years from citation dates remain ("2025" appears 20 times), along with menu words like "hide" and "page."
 ### Interpretation and Insights
