@@ -228,10 +228,11 @@ ax = plt.gca()
 # to rotate 45 degrees for better readability,
 ax.tick_params(axis="x", labelrotation=45)
 
-plt.title("Most Frequent Words")
+plt.title("Most Frequent Words: Air Traffic Control Wikipedia Page")
 plt.xlabel("Word")
 plt.ylabel("Frequency")
 plt.tight_layout()
+plt.savefig("docs/images/top_words.png", bbox_inches="tight")
 plt.show()
 
 # ============================================================
@@ -264,7 +265,8 @@ plt.figure(figsize=(12, 6))
 # Display the word cloud image with imshow() and turn off axes for a cleaner look.
 plt.imshow(wc)
 plt.axis("off")
-plt.title("Word Cloud")
+plt.title(label="Word Cloud of Air Traffic Control Wikipedia Page")
+plt.savefig("docs/images/word_cloud.png", bbox_inches="tight")
 plt.show()
 
 # ============================================================
