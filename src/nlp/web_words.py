@@ -47,6 +47,9 @@ LOG: logging.Logger = get_logger("CI", level="DEBUG")
 ROOT_PATH: Path = Path.cwd()
 NOTEBOOKS_PATH: Path = ROOT_PATH / "notebooks"
 SCRIPTS_PATH: Path = ROOT_PATH / "scripts"
+IMAGES_PATH: Path = ROOT_PATH / "docs" / "images"
+IMAGES_PATH.mkdir(parents=True, exist_ok=True)
+
 
 log_header(LOG, "NLP")
 LOG.info("START script.....")
@@ -232,7 +235,7 @@ plt.title("Most Frequent Words: Air Traffic Control Wikipedia Page")
 plt.xlabel("Word")
 plt.ylabel("Frequency")
 plt.tight_layout()
-plt.savefig("docs/images/top_words.png", bbox_inches="tight")
+plt.savefig(IMAGES_PATH / "top_words.png", bbox_inches="tight")
 plt.show()
 
 # ============================================================
@@ -266,7 +269,7 @@ plt.figure(figsize=(12, 6))
 plt.imshow(wc)
 plt.axis("off")
 plt.title(label="Word Cloud of Air Traffic Control Wikipedia Page")
-plt.savefig("docs/images/word_cloud.png", bbox_inches="tight")
+plt.savefig(IMAGES_PATH / "top_words.png", bbox_inches="tight")
 plt.show()
 
 # ============================================================
